@@ -45,3 +45,8 @@ Navbar.propTypes  = {
     title : PropTypes.string,
     home: PropTypes.string
 }
+
+Navbar.defaultProps ={
+    title : "Set title here",
+    home: "set page name"
+}
