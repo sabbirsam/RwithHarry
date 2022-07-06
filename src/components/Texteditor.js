@@ -23,6 +23,10 @@ export default function Texteditor( props) {
     const ClearBtn =()=>{
         updateText('');
     }
+    const Reverse =()=>{
+      updateText(text.split('').reverse().join(''))
+    }
+
     const handlRemoveSymbol =()=>{
       const regex = /[0-9/A-Z/a-z/ /]/g;
       const letters = text.match(regex);
@@ -51,7 +55,8 @@ export default function Texteditor( props) {
         <button className="btn btn-primary my-3" onClick={TitleCase}>Titlecase</button>
         <button className="btn btn-primary my-3 mx-3" onClick={handlRemoveSymbol }>Remove Symbol</button>
         <button className="btn btn-primary my-3" onClick={handlRemovenumber }>Extract Number</button>
-        <button className="btn btn-primary my-3 mx-3" onClick={ClearBtn}>Clear</button>
+        <button className="btn btn-primary my-3 mx-3" onClick={Reverse}>Reverse</button>
+        <button className="btn btn-primary my-3" onClick={ClearBtn}>Clear</button>
       </div>
    </div>
    <div className="container">
