@@ -19,6 +19,26 @@ export default function Texteditor( props) {
     const handleChange =(event)=>{
         updateText(event.target.value);
     }
+
+    const ClearBtn =()=>{
+        updateText('');
+    }
+    const handlRemoveSymbol =()=>{
+      const regex = /[0-9/A-Z/a-z/ /]/g;
+      const letters = text.match(regex);
+      const clean = letters.join('');
+      updateText(clean)
+
+    }
+    const handlRemovenumber =()=>{
+      const regex = /[0-9/]/g;
+      const digits  = text.match(regex);
+      const clean = digits.join("");
+      updateText(clean)
+
+    }
+
+    
     const [text, updateText] = useState("Write here what you want to capitalize");
   return (
   <>
@@ -29,6 +49,9 @@ export default function Texteditor( props) {
         <button className="btn btn-primary my-3" onClick={Uppercase}> Uppercase</button>
         <button className="btn btn-primary my-3 mx-3" onClick={Lowercase}> Lowercase</button>
         <button className="btn btn-primary my-3" onClick={TitleCase}>Titlecase</button>
+        <button className="btn btn-primary my-3 mx-3" onClick={handlRemoveSymbol }>Remove Symbol</button>
+        <button className="btn btn-primary my-3" onClick={handlRemovenumber }>Extract Number</button>
+        <button className="btn btn-primary my-3 mx-3" onClick={ClearBtn}>Clear</button>
       </div>
    </div>
    <div className="container">
