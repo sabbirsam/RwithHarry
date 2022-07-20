@@ -7,6 +7,7 @@ import Texteditor from './components/Texteditor';
 function App() {
 
   const [mode, setMode] = useState('light');
+  
   const toogleMode=()=>{
     if(mode === 'light'){
       setMode ('dark');
@@ -27,10 +28,11 @@ function App() {
 
     }
   }
+  
   return (
 
   <>
-  <Navbar title="Sabbir Ahmed" home="HOME" mode={mode} toogleMode={toogleMode}  blog="Blog" About="About"/>
+  <Navbar title="Sabbir Ahmed" home="HOME" mode={mode} toogleMode={toogleMode} name="sam" blog="Blog" About="About"/>
   <Texteditor title="Write here..."/>
   </>
 
