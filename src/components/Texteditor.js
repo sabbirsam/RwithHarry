@@ -23,6 +23,11 @@ export default function Texteditor( props) {
     const ClearBtn =()=>{
         updateText('');
     }
+    const CopyBtn =()=>{
+        var text = document.getElementById("exampleFormControlTextarea1");
+       text.select();
+        navigator.clipboard.writeText(text.value);
+    }
     const Reverse =()=>{
       updateText(text.split('').reverse().join(''))
     }
@@ -56,7 +61,8 @@ export default function Texteditor( props) {
         <button className="btn btn-primary my-3 mx-3" onClick={handlRemoveSymbol }>Remove Symbol</button>
         <button className="btn btn-primary my-3" onClick={handlRemovenumber }>Extract Number</button>
         <button className="btn btn-primary my-3 mx-3" onClick={Reverse}>Reverse</button>
-        <button className="btn btn-primary my-3" onClick={ClearBtn}>Clear</button>
+        <button className="btn btn-primary my-3" onClick={CopyBtn}>COPY</button>
+        <button className="btn btn-primary my-3 mx-3" onClick={ClearBtn}>Clear</button>
       </div>
    </div>
    <div className="container">
